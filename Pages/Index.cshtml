@@ -1,0 +1,36 @@
+﻿@page
+@model IEnumerable<WebApplication2.Models.Item>
+
+    @{
+    ViewData["Title"] = "Index";
+    }
+
+    <!DOCTYPE html>
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+        <h1>@ViewData["Title"]</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Region?.Name</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </body>
+</html>
